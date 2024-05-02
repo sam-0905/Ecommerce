@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
 import faker from "faker";
 
@@ -18,51 +18,79 @@ const data = [...Array(50)].map((item) => ({
   offer: faker.random.arrayElement([
     "Save 50",
     "70% bonanza",
-    "Republic Day Sale"
+    "Republic Day Sale",
   ]),
   idealFor: faker.random.arrayElement([
     "Men",
     "Women",
     "Girl",
     "Boy",
-    "Senior"
+    "Senior",
   ]),
   level: faker.random.arrayElement([
     "beginner",
     "amateur",
     "intermediate",
     "advanced",
-    "professional"
+    "professional",
   ]),
-  color: faker.commerce.color()
+  color: faker.commerce.color(),
 }));
-function App() {  
-  console.log(data)
+
+function App() {
+  const [searchText, setSearchText] = useState();
+  const [filteredData, setFilteredData] = useState(data);
+
+  const filterSearchData = () => {
+    console.log("data from filter", searchText);
+    const filteredResult = data.filter((data) =>
+      data.name.toLowerCase().includes(searchText.toLowerCase())
+    );
+    console.log({ filteredResult });
+    setFilteredData(filteredResult);
+  };
+
+  console.log(data);
 
   return (
     <>
-     <h1>Hellow world</h1>
-     <div className="App" style={{ display: "flex", flexWrap: "wrap" }}>
-    {
-        data.map(({ id,
-          name,
-          image,
-          price,
-          productName,
-          inStock,
-          level,
-          fastDelivery}) =>(
-           <div
-            key={id}
-           style={{
-             border: "1px solid #4B5563",
-             borderRadius: "0 0 0.5rem 0.5rem",
-             margin: "1rem",
-             maxWidth: "40%",
-             padding: "0 0 1rem"
-           }}>
-            
-            <img src={image} width="100%" height="auto" alt={productName} />
+      <h1>Hellow world</h1>
+
+      <div className="Search-container">
+        <input
+          type="text"
+          className="search-bar"
+          placeholder="Search for restaurants and food"
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+        />
+        <button className="search-btn" onClick={filterSearchData}>
+          <i className="fa fa-search"></i>
+        </button>
+      </div>
+      <div className="App" style={{ display: "flex", flexWrap: "wrap" }}>
+        {filteredData.map(
+          ({
+            id,
+            name,
+            image,
+            price,
+            productName,
+            inStock,
+            level,
+            fastDelivery,
+          }) => (
+            <div
+              key={id}
+              style={{
+                border: "1px solid #4B5563",
+                borderRadius: "0 0 0.5rem 0.5rem",
+                margin: "1rem",
+                maxWidth: "40%",
+                padding: "0 0 1rem",
+              }}
+            >
+              <img src={image} width="100%" height="auto" alt={productName} />
               <h3> {name} </h3>
               <div>Rs. {price}</div>
               {inStock && <div> In Stock </div>}
@@ -73,12 +101,12 @@ function App() {
               ) : (
                 <div> 3 days minimum </div>
               )}
-           </div> 
-          ) ) 
-    }
-     </div>
+            </div>
+          )
+        )}
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
