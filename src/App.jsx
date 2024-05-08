@@ -50,17 +50,17 @@ function App() {
     setFilteredData(filteredResult);
   };
 
-  console.log(data);
+  console.log("data from filter", data);
 
   return (
     <>
-      <h1>Hellow world</h1>
+      <h1>Ecommerce App</h1>
 
       <div className="Search-container">
         <input
           type="text"
           className="search-bar"
-          placeholder="Search for restaurants and food"
+          placeholder="please search here🔍"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         />
