@@ -6,22 +6,9 @@
     color: rgba(255, 255, 255, 0.87);
     background-color: #242424;*/
     font-synthesis: none;
-    text-rendering: optimizeLegibility;
+    /*text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-    margin: 0;
-    display: flex;
-    place-items: center;
-    min-width: 320px;
-    min-height: 100vh;
-}
-
-h1 {
-    font-size: 3.2em;
-    line-height: 1.1;
+    -moz-osx-font-smoothing: grayscale;*/
 }
 
 
@@ -58,6 +45,30 @@ h1 {
     color: ghostwhite;
     font-size: 20px;
     border-radius: 0rem 0.5rem 0.5rem 0rem;
+}
+
+
+/*card */
+
+.card {
+    margin: 1rem 1rem;
+    padding: 0.5rem;
+    border: 1px solid bisque;
+    width: 90%;
+    height: auto;
+    text-align: center;
+    cursor: pointer;
+    /*zoom card;*/
+    transition: transform .1s;
+    /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);*/
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+}
+
+.card>img {
+    display: flex;
+    width: 100%;
+    padding: auto;
 }
 
 
