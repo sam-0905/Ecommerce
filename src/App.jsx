@@ -69,7 +69,7 @@ function App() {
           <i className="fa fa-search"></i>
         </button>
       </div>
-      <div className="App" style={{ display: "flex", flexWrap: "wrap" }}>
+      <div className="card" style={{ display: "flex", flexWrap: "wrap" }}>
         {filteredData.map(
           ({
             id,
