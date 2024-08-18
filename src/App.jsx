@@ -1,10 +1,11 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import './App.css'
 
 import faker from "faker";
 
 faker.seed(123);
 
+// eslint-disable-next-line no-unused-vars
 const data = [...Array(50)].map((item) => ({
   id: faker.random.uuid(),
   name: faker.commerce.productName(),
