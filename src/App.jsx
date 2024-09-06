@@ -2,42 +2,46 @@ import { useState } from "react";
 import "./App.css";
 // import { useState } from 'react'
 import './App.css'
+import "font-awesome/css/font-awesome.min.css";
 
-import faker from "faker";
+// import faker from "faker";
+// import * as faker from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
+
 
 faker.seed(123);
 
 // eslint-disable-next-line no-unused-vars
 const data = [...Array(50)].map((item) => ({
-  id: faker.random.uuid(),
+  id: faker.string.uuid(),
   name: faker.commerce.productName(),
-  image: faker.random.image(),
+  image: faker.image.urlLoremFlickr({width:128,height:128,grayscale: true}),
   price: faker.commerce.price(),
   material: faker.commerce.productMaterial(),
   brand: faker.lorem.word(),
-  inStock: faker.random.boolean(),
-  fastDelivery: faker.random.boolean(),
-  ratings: faker.random.arrayElement([1, 2, 3, 4, 5]),
-  offer: faker.random.arrayElement([
+  inStock: faker.datatype.boolean(),
+  fastDelivery: faker.datatype.boolean(),
+  ratings: faker.helpers.arrayElement([1, 2, 3, 4, 5]),
+  offer: faker.helpers.arrayElement([
     "Save 50",
     "70% bonanza",
     "Republic Day Sale",
   ]),
-  idealFor: faker.random.arrayElement([
+  idealFor: faker.helpers.arrayElement([
     "Men",
     "Women",
     "Girl",
     "Boy",
     "Senior",
   ]),
-  level: faker.random.arrayElement([
+  level: faker.helpers.arrayElement([
     "beginner",
     "amateur",
     "intermediate",
     "advanced",
     "professional",
   ]),
-  color: faker.commerce.color(),
+  color: faker.color.human(),
 }));
 
 function App() {
@@ -63,15 +67,15 @@ function App() {
         <input
           type="text"
           className="search-bar"
-          placeholder="please search here🔍"
+          placeholder="Search for Products, Brands and More"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         />
         <button className="search-btn" onClick={filterSearchData}>
-          <i className="fa fa-search"></i>
+        <i className="fa fa-search"></i>
         </button>
       </div>
-      <div className="card" style={{ display: "flex", flexWrap: "wrap" }}>
+      <div className="card" >
         {filteredData.map(
           ({
             id,
@@ -83,28 +87,23 @@ function App() {
             level,
             fastDelivery,
           }) => (
-            <div
+            <div className="card-img"
               key={id}
-              style={{
-                border: "1px solid #4B5563",
-                borderRadius: "0 0 0.5rem 0.5rem",
-                margin: "1rem",
-                maxWidth: "40%",
-                padding: "0 0 1rem",
-              }}
-            >
+             >
               <img src={image} width="100%" height="auto" alt={productName} />
               <h3> {name} </h3>
-              <div>Rs. {price}</div>
-              {inStock && <div> In Stock </div>}
-              {!inStock && <div> Out of Stock </div>}
-              <div>{level}</div>
-              {fastDelivery ? (
-                <div> Fast Delivery </div>
-              ) : (
-                <div> 3 days minimum </div>
-              )}
-            </div>
+            <div className="card-footer">
+                <div>Rs. {price}</div>
+                    {inStock && <div> In Stock </div>}
+                    {!inStock && <div> Out of Stock </div>}
+                    <div>{level}</div>
+                     {fastDelivery ? (
+                     <div> Fast Delivery </div>
+                     ) : (
+                     <div> 3 days minimum </div>
+                     )}
+             </div>
+          </div>
           )
         )}
       </div>
