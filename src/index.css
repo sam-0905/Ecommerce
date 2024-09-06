@@ -51,27 +51,43 @@
 /*card */
 
 .card {
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
     margin: 1rem 1rem;
+    margin-left: 7rem;
     padding: 0.5rem;
     border: 1px solid bisque;
-    width: 90%;
-    height: auto;
+    width: 80%;
+    /* height: auto; */
     text-align: center;
     cursor: pointer;
     /*zoom card;*/
-    transition: transform .1s;
+    /* transition: transform 0.1s; */
     /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);*/
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     border-radius: 0.5rem;
 }
 
-.card>img {
-    display: flex;
-    width: 100%;
-    padding: auto;
+.card-img {
+    width: 20%;
+    padding: 1rem;
+    margin: 1rem;
+    margin-left: 4rem;
+    border: 1px solid #4B5563;
+    border-radius: 0 1rem 1rem 1rem;
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;    
+    transition: transform 0.2s;
 }
 
-
+.card .card-footer {
+    font-size: 15px;
+    margin-top: 3px;
+    color: navy;
+    font-family:'Franklin Gothic Medium';    
+    font-weight: 700;
+}
 /*
 button {
     border-radius: 8px;
