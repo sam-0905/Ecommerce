@@ -65,7 +65,7 @@
     /*zoom card;*/
     /* transition: transform 0.1s; */
     /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);*/
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); */
     border-radius: 0.5rem;
 }
 
@@ -77,15 +77,20 @@
     border: 1px solid #4B5563;
     border-radius: 0 1rem 1rem 1rem;
     text-align: center;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;    
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;   
+    font-weight: bold; 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: transform 0.2s;
 }
+.card-img:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+} 
 
-.card .card-footer {
+.card .card-body {
     font-size: 15px;
     margin-top: 3px;
     color: navy;
-    font-family:'Franklin Gothic Medium';    
+    font-family:Verdana, Geneva, Tahoma, sans-serif;    
     font-weight: 700;
 }
 /*
