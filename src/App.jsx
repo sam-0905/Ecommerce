@@ -15,7 +15,7 @@ faker.seed(123);
 const data = [...Array(50)].map((item) => ({
   id: faker.string.uuid(),
   name: faker.commerce.productName(),
-  image: faker.image.urlLoremFlickr({width:128,height:128,grayscale: true}),
+  image: faker.image.url({width:128,height:128}),
   price: faker.commerce.price(),
   material: faker.commerce.productMaterial(),
   brand: faker.lorem.word(),
@@ -53,7 +53,7 @@ function App() {
     const filteredResult = data.filter((data) =>
       data.name.toLowerCase().includes(searchText.toLowerCase())
     );
-    console.log({ filteredResult });
+    console.log({ filteredResult }); 
     setFilteredData(filteredResult);
   };
 
@@ -87,12 +87,12 @@ function App() {
             level,
             fastDelivery,
           }) => (
-            <div className="card-img"
-              key={id}
-             >
+            <div key={id} className="card-img">
+              <>
               <img src={image} width="100%" height="auto" alt={productName} />
               <h3> {name} </h3>
-            <div className="card-footer">
+              </>
+            <div className="card-body">
                 <div>Rs. {price}</div>
                     {inStock && <div> In Stock </div>}
                     {!inStock && <div> Out of Stock </div>}
