@@ -11,6 +11,25 @@
     -moz-osx-font-smoothing: grayscale;*/
 }
 
+/* NAv bar */
+.Nav {
+    margin: 0;
+    background-color: darkred;
+    padding: 1em;
+    text-align: end;
+    margin-top: 0;
+    display: flex; 
+    justify-content:end;
+    justify-content: baseline  ;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+.Nav link {
+    font-weight: bold;
+    text-decoration: none;
+  }
+
 
 /*search box*/
 
