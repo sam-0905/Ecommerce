@@ -29,6 +29,10 @@
     font-weight: bold;
     text-decoration: none;
   }
+.Nav .container{
+    margin-right: 1rem;
+    font-size: large;
+}
 
 
 /*search box*/

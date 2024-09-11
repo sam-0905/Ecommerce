@@ -27,20 +27,16 @@ function App() {
     <>
       <nav className="Nav link ">
         <NavLink style={getActiveLink} to="/">
-        <i className="fa fa-home"></i>
-          Home
+        <i className="fa fa-home container"> Home  </i>
         </NavLink>
         <NavLink style={getActiveLink} to="/login">
-          <i className="fa fa-sign-in" ></i>
-          Login
+          <i className="fa fa-sign-in container" >Login</i>
         </NavLink>
         <NavLink style={getActiveLink} to="/cart">
-        <i className="fa fa-cart-arrow-down "></i>
-          cart
+        <i className="fa fa-cart-arrow-down container">Cart</i>
         </NavLink>
         <NavLink style={getActiveLink} to="/wish">
-        <i className="fa fa-heart"></i>
-          Wishlist
+        <i className="fa fa-heart container">Wishlist</i>
         </NavLink>
       </nav>
 
