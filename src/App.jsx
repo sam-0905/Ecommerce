@@ -12,34 +12,17 @@ import Error from "./components/Error";
 // import { Link } from 'react-router-dom';
 //Error
 // import { NotFound } from './Pages/Error';
-//Nav link
-import { NavLink } from 'react-router-dom';
+import SideBar from "./Sidebar/sidebar";
+import Header from "./Pages/Header";
 // import LoginComponent from './Pages/Login';
 // import UserComponent from './Pages/User';
 
-const getActiveLink = ({ isActive, isPending }) => ({
-  margin: '1rem 0',
-  color: isActive ? 'yellow' : isPending ? 'pending' : 'cornsilk',
-});
 
 function App() {
   return (
     <>
-      <nav className="Nav link ">
-        <NavLink style={getActiveLink} to="/">
-        <i className="fa fa-home container"> Home  </i>
-        </NavLink>
-        <NavLink style={getActiveLink} to="/login">
-          <i className="fa fa-sign-in container" >Login</i>
-        </NavLink>
-        <NavLink style={getActiveLink} to="/cart">
-        <i className="fa fa-cart-arrow-down container">Cart</i>
-        </NavLink>
-        <NavLink style={getActiveLink} to="/wish">
-        <i className="fa fa-heart container">Wishlist</i>
-        </NavLink>
-      </nav>
-
+      <SideBar/>
+      <Header/>
       <Routes>
         <Route path="/" element={<Body/>} />
         <Route path="/login" element={<LoginComp />} />
