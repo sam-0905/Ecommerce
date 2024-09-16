@@ -1,3 +1,9 @@
+/* Default */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
@@ -52,7 +58,7 @@
     margin: 1.5rem auto;
     border: 1px solid black;
     border-radius: 0.5rem;
-    margin-left: 17rem;
+    margin-left: 25%;
     text-align: center;
 }
 
@@ -87,7 +93,7 @@
     flex-direction:row;
     flex-wrap: wrap;
     margin: 1rem ;
-    margin-left: 15rem;
+    margin-left: 22%;
     padding: 0.5rem;
     border: 1px solid bisque;
     width: 75%;
@@ -102,29 +108,35 @@
 }
 
 .card-img {
-    width: 17%;
+    width: 32%;
     padding: 1rem;
     margin: 1rem;
-    margin-left: 5rem;
+    margin-left: 12%;
     border: 1px solid #4B5563;
     border-radius: 0 1rem 1rem 1rem;
     text-align: center;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;   
-    font-weight: bold; 
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: transform 0.2s;
+    word-break: break-word;
+    overflow:hidden;
 }
 .card-img:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 } 
 
-.card .card-body {
-    font-size: 15px;
-    margin-top: 3px;
+.card .body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-top: 2px;
+    overflow:auto;
     color: navy;
     font-family:Verdana, Geneva, Tahoma, sans-serif;    
     font-weight: 700;
-    /* margin-left: 5rem; */
+    /* overflow-wrap: break-word; */
+    word-break: break-word;
 }
 /*
 button {
