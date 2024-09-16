@@ -81,22 +81,24 @@ function Body() {
             inStock,
             level,
             fastDelivery,
+            ratings,
           }) => (
             <div key={id} className="card-img">
               <>
               <img src={image} width="100%" height="auto" alt={productName} />
               <h3> {name} </h3>
               </>
-            <div className="card-body">
+            <div className="body">
                 <div>Rs. {price}</div>
                     {inStock && <div> In Stock </div>}
                     {!inStock && <div> Out of Stock </div>}
                     <div>{level}</div>
+                    <div className="fa fa-star" style={{marginTop:"4px"}}>{ratings}</div>
                      {fastDelivery ? (
                      <div> Fast Delivery </div>
                      ) : (
                      <div> 3 days minimum </div>
-                     )}
+                     )}                    
              </div>
           </div>
           )
