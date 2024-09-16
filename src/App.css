@@ -1,3 +1,9 @@
+/* Default */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 #root {
     margin: 0 auto;
     margin-top: 0;
@@ -5,6 +11,11 @@
     width: 100%;
 }
 
+@media only screen and(max-width: 576) {
+    body{
+      font-size: 18px;
+    }
+  }
 
 /*.logo {
   height: 6em;
