@@ -1,0 +1,34 @@
+.sidebar-head{
+    font-size: larger;
+    font-weight: bold;
+    padding: 5px;
+    cursor: pointer;
+    margin-top: 0;
+}
+.sidebar-title{
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 5px;   
+    text-align: center;
+}
+.sidebar-label{
+    display: block;
+    position: relative;
+    /* padding-left: 5px; */
+    margin-bottom: 20px;
+    cursor: pointer;
+    /* overflow: auto; */
+    text-align: center;
+}
+
+.checkmark-input{
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 3vh;
+    width: 20px;
+}
+
+.checkmark-input:hover  {
+    background-color: #fb7b13;
+}
