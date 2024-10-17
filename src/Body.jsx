@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { data } from "./utils/constant";
+import data from "./utils/constant";
+
 
 function Body() {
   const [searchText, setSearchText] = useState();

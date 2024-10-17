@@ -4,7 +4,7 @@ import { faker } from '@faker-js/faker';
 faker.seed(123);
 
 // eslint-disable-next-line no-unused-vars
- export const data = [...Array(50)].map((item) => ({
+ const data = [...Array(50)].map((item) => ({
   id: faker.string.uuid(),
   name: faker.commerce.productName(),
   image: faker.image.url({width:128,height:128}),
@@ -35,3 +35,5 @@ faker.seed(123);
   ]),
   color: faker.color.human(),
 }));
+
+export default data;
