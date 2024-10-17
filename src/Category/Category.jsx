@@ -1,7 +1,7 @@
 import "./Category.css";
 import { useReducer } from "react";
-import { data } from "../../Constant/constant";
-import { getSortedData } from './../../Filter/Sort';
+import { getSortedData } from '../Filter/Sort';
+import data from "../utils/constant";
 
 const Category = () => {  
   

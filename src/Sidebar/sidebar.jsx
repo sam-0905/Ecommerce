@@ -1,5 +1,7 @@
 import "./sidebar.css"
-import Category from "./Category/Category";
+import Category from "../Category/Category";
+
+
 const SideBar = () => {
 return (
     <>
